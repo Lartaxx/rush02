@@ -6,7 +6,7 @@
 /*   By: rrodor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 10:12:41 by rrodor            #+#    #+#             */
-/*   Updated: 2022/11/19 11:24:48 by rrodor           ###   ########.fr       */
+/*   Updated: 2022/11/19 11:40:04 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,18 +49,20 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-int	main()
+int	main(int argc, char **argv)
 {
 	int	test;
-	char	str[1000];
+	char	str[351];
 	int 	size;
-	char	nb[5] = "1000";
+	char	*nb = argv[1];
 	char	*res;
 	int	i;
 
+	if (argc != 2)
+		return 0;
 	i = 0;
 	test = open("numbers.dict.txt", O_RDONLY);
-	size = read (test, str, 999);
+	size = read (test, str, 350);
 	str[size] = 0;
 	res = ft_strstr(str, nb);
 	if (res == 0)
