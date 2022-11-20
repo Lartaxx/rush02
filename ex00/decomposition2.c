@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush-02.c                                          :+:      :+:    :+:   */
+/*   decomposition2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 20:48:00 by rrodor            #+#    #+#             */
-/*   Updated: 2022/11/19 20:59:23 by rrodor           ###   ########.fr       */
+/*   Created: 2022/11/19 20:17:16 by rrodor            #+#    #+#             */
+/*   Updated: 2022/11/19 21:46:57 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush02.h"
-
-int	main(int argc, char **argv)
+void	ft_printsimple(char n, 
+void	ft_printdis(char n1, char n2, char *str)
 {
-	int	test;
-	char	str[351];
-	int	size;
-	char	*nb = argv[1];
+	char n[1];
+	int	nb;
 
-	if (argc != 2)
-		return 0;
-	test = open("numbers.dict.txt", O_RDONLY);
-	size = read (test, str, 350);
-	str[size] = 0;
-	ft_printint(nb, str);
-	close (test);
-	return 0;
-} 
+	n[0] = n1;
+	n[1] = n2;
+	nb = ft_atoi(n)
+	if (nb >= 0 && nb <= 0)
+		ft_printsimple(nb, str);
+	else
+	{
+		if ((nb % 10) == 0)
+			ft_printsimple(nb, str);
+		else
+		{
+			a = nb % 10;
+			b = nb - a;
+			ft_printsimple(b, str);
+			ft_printsimple(a, str);
+		}
+	}
+}

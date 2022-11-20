@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush-02.c                                          :+:      :+:    :+:   */
+/*   rush02.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrodor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 20:48:00 by rrodor            #+#    #+#             */
-/*   Updated: 2022/11/19 20:59:23 by rrodor           ###   ########.fr       */
+/*   Created: 2022/11/19 20:49:04 by rrodor            #+#    #+#             */
+/*   Updated: 2022/11/19 21:12:34 by rrodor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush02.h"
+#ifndef RUSH02_H
+# define RUSH02_H
 
-int	main(int argc, char **argv)
-{
-	int	test;
-	char	str[351];
-	int	size;
-	char	*nb = argv[1];
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
 
-	if (argc != 2)
-		return 0;
-	test = open("numbers.dict.txt", O_RDONLY);
-	size = read (test, str, 350);
-	str[size] = 0;
-	ft_printint(nb, str);
-	close (test);
-	return 0;
-} 
+void	ft_printint(char *nb, char *str);
+char	*ft_strstr(char *str, char *to_find);
+int		ft_strlen(char *str);
+void	ft_printcent(char *str);
+void	ft_printcentaine(char n, char *str);
+
+#endif
